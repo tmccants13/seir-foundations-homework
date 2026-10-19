@@ -11,8 +11,8 @@ I used the `t3.micro` instance type in the `us-east-1` region and connected thro
 | Deployment | Public IPv4 Address | Connection Method | Screenshot | Instance Terminated? |
 |---|---|---|---|---|
 | 1 | 3.235.135.182 | EC2 Instance Connect | [deployment-1.png](screenshots/deployment-1.png) | Yes |
-| 2 | TO BE ADDED | EC2 Instance Connect | [deployment-2.png](screenshots/deployment-2.png) | Yes |
-| 3 | TO BE ADDED | EC2 Instance Connect | [deployment-3.png](screenshots/deployment-3.png) | Yes |
+| 2 | 47.184.103.153 | EC2 Instance Connect | [deployment-2.png](screenshots/deployment-2.png) | Yes |
+| 3 | 47.184.103.153 | EC2 Instance Connect | [deployment-3.png](screenshots/deployment-3.png) | Yes |
 
 ## Deployment 1
 
