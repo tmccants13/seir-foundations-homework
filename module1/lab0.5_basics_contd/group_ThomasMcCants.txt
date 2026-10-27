@@ -1,0 +1,3 @@
+Spotter = Thomas McCants
+Teammates = Hasan Warren, Kojo Johnson
+Days + Times when your team meets = East Coast (EST) 8 - 10 PM Mon. & Wed.
