@@ -1,0 +1,206 @@
+AI REVIEW TRANSCRIPT
+
+Student: Thomas McCants
+AI Tool: ChatGPT
+
+PURPOSE
+
+This transcript documents my use of ChatGPT while completing the SEIR Foundations EC2, COBOL, and GitHub homework. Some earlier exchanges are reconstructed summaries of the original conversations rather than verbatim quotations.
+
+--------------------------------------------------
+EXCHANGE 1 — EC2 SETUP
+--------------------------------------------------
+
+User question/topic:
+How do I continue setting up the new EC2 instance and install the Balerica banking application?
+
+ChatGPT response (summarized):
+Install Git using:
+
+sudo dnf install -y git
+
+Clone the SEIR Foundations repository:
+
+git clone https://github.com/BalericaAI/SEIR-Foundations.git
+
+Run the Balerica installer:
+
+bash SEIR-Foundations/module1/lesson1_ec2/API/install/install.sh
+
+Then navigate to the banking application directory, activate the Python virtual environment, and start the application:
+
+cd /opt/balerica-bank
+source venv/bin/activate
+uvicorn app.main:app --host 0.0.0.0 --port 8000
+
+The expected successful startup message is:
+
+INFO: Application startup complete.
+
+Verification:
+The EC2 terminal displayed the successful application startup message.
+
+--------------------------------------------------
+EXCHANGE 2 — EC2 SCREENSHOT REQUIREMENTS
+--------------------------------------------------
+
+User question/topic:
+What needs to appear in the screenshot for each EC2 run?
+
+ChatGPT response (summarized):
+Each screenshot must display the instance identification command:
+
+whoami && TZ='America/Chicago' date && ec2-metadata -i && uptime -s
+
+The screenshot must also show:
+
+INFO: Application startup complete.
+
+Both must be visible in the same screenshot.
+
+Verification:
+The requirement was compared with the SEIR Foundations Lesson 1 homework instructions.
+
+--------------------------------------------------
+EXCHANGE 3 — COBOL ACCOUNT LOOKUP
+--------------------------------------------------
+
+User question/topic:
+How do I complete the successful and unsuccessful COBOL account lookups?
+
+ChatGPT response (summarized):
+For a successful lookup, run:
+
+./cobol/bin/account_lookup 100001
+echo $?
+
+The program returns account information for Alice Johnson, with return code 0.
+
+For an account that does not exist, run:
+
+./cobol/bin/account_lookup 999999
+echo $?
+
+The program returns:
+
+ERROR=ACCOUNT NOT FOUND
+
+The return code is 4.
+
+Verification:
+The EC2 terminal produced the expected results and return codes.
+
+--------------------------------------------------
+EXCHANGE 4 — COBOL PAYMENT VALIDATION
+--------------------------------------------------
+
+User question/topic:
+How do I demonstrate a rejected payment with COBOL?
+
+ChatGPT response (summarized):
+Run:
+
+./cobol/bin/payment_post TXN-TM-0001 100001 0.00 USD TEST-ZERO
+echo $?
+
+The program should reject the zero-dollar payment.
+
+Observed output included:
+
+TXN=TXN-TM-0001
+ACCOUNT=100001
+AMOUNT=0.00
+CURRENCY=USD
+STATUS=REJECTED
+REASON=AMOUNT MUST BE GREATER THAN ZERO
+
+The return code was 8.
+
+Verification:
+The terminal displayed the rejected payment and return code 8.
+
+--------------------------------------------------
+EXCHANGE 5 — COBOL FILE ACCESS ERROR
+--------------------------------------------------
+
+User question/topic:
+How do I demonstrate the COBOL file access error?
+
+ChatGPT response (summarized):
+Change to the home directory and run the program using its absolute path:
+
+cd ~
+/opt/balerica-bank/cobol/bin/account_lookup 100001
+echo $?
+
+The program could not find its expected relative data file.
+
+Observed output:
+
+ERROR=CANNOT OPEN data/accounts.dat
+FILE-STATUS=35
+
+The return code was 12.
+
+Verification:
+The EC2 terminal displayed the file error and return code 12.
+
+--------------------------------------------------
+EXCHANGE 6 — SCREENSHOT COUNT
+--------------------------------------------------
+
+User question/topic:
+Why did I take seven screenshots during Run 1?
+
+ChatGPT response (summarized):
+The seven screenshots served different requirements. Only one was the EC2 run screenshot. The others documented separate COBOL and GitHub tasks, including successful and unsuccessful lookups, rejected payment, file access error, fixed-width ledger inspection, and repository cloning.
+
+The instructor's daily screenshot limit applies to the EC2 run screenshots, not the separate COBOL evidence.
+
+Verification:
+The screenshot categories were compared with the homework requirements.
+
+--------------------------------------------------
+EXCHANGE 7 — GITHUB REPOSITORY
+--------------------------------------------------
+
+Actual user question:
+"how shoews the full repositry look?"
+
+ChatGPT response (summarized):
+The homework repository should contain README.md, lab1_notes.md, the AI review, AI research, spotter file, and a screenshots folder.
+
+The screenshots folder should contain the seven EC2 run screenshots, three AWS quiz screenshots, four COBOL return-code screenshots, the ledger screenshot, and the Git clone screenshot.
+
+ChatGPT also identified an extra nested lesson1_ec2 directory in the repository.
+
+Verification:
+The repository structure was compared with the assignment requirements and the GitHub screenshot.
+
+--------------------------------------------------
+EXCHANGE 8 — AI REVIEW AND TRANSCRIPT
+--------------------------------------------------
+
+Actual user question:
+"what is ai review and ai transcript?"
+
+ChatGPT response (summarized):
+The AI Review summarizes at least five questions asked to ChatGPT, what was learned, how the answers were verified, and an example where AI was wrong, vague, or outdated.
+
+The AI transcript provides evidence of the original interactions. It can be supplied as a conversation share link or a separate transcript file.
+
+The user selected Option B, a separate transcript file.
+
+--------------------------------------------------
+EXAMPLE OF AI LIMITATION
+--------------------------------------------------
+
+During preparation of the AI-enabled research assignment, ChatGPT initially repeated the instructor's directions instead of completing the requested research. It also included unnecessary student instructions and verification placeholders in a document intended for submission.
+
+The user identified these problems and requested corrections. ChatGPT subsequently provided the five-topic research content directly in the conversation and explained which formatting requirements came from the instructor.
+
+This demonstrates that AI-generated work must be reviewed against the original assignment rather than assumed to be correct.
+
+--------------------------------------------------
+END OF TRANSCRIPT
+--------------------------------------------------
