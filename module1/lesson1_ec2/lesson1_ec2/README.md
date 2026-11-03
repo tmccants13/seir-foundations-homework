@@ -40,7 +40,7 @@ Evidence: `screenshots/cobol_ledger_decode.jpg`
 
 ## GitHub Clone
 
-Evidence: `screenshots/git_clone.jpg` (pending verification).
+Evidence: `screenshots/git_clone.jpg` 
 
 ## Extra Credit
 
