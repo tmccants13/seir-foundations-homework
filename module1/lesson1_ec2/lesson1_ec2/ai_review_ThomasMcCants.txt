@@ -1,0 +1,29 @@
+Question 1: Why do I need Git on my EC2 instance?
+
+Git allows me to clone the SEIR Foundations repository onto my EC2 instance so I can access the installation scripts and course files.
+
+Verification: I installed Git, ran git --version, and successfully cloned the repository.
+
+Question 2: Why must I run the COBOL programs from /opt/balerica-bank?
+
+The COBOL programs use relative paths to locate their data files. Running them from another directory can cause file access errors.
+
+Verification: Running the lookup from my home directory produced ERROR=CANNOT OPEN data/accounts.dat and return code 12.
+
+Question 3: What do COBOL return codes 0, 4, 8, and 12 mean?
+
+In this lab, they indicate success, account not found, business-rule rejection, and environment failure, respectively.
+
+Verification: I intentionally triggered all four codes and recorded their outputs.
+
+Question 4: Why was my $0.00 payment rejected?
+
+The bank requires a payment amount greater than zero.
+
+Verification: My transaction TXN-TM-0001 returned STATUS=REJECTED, REASON=AMOUNT MUST BE GREATER THAN ZERO, and code 8.
+
+Question 5: How do I know the FastAPI server started successfully?
+
+Uvicorn displays Application startup complete. when the application finishes startup.
+
+Verification: My terminal displayed that message and confirmed the server was listening on port 8000. This verifies startup, although not every API endpoint.
