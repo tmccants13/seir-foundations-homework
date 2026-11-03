@@ -9,7 +9,7 @@
 
 | Run | Date (local) | Time zone | Instance ID | Boot time (UTC) | Public IPv4 DNS | Screenshot | Terminated? |
 |---|---|---|---|---|---|---|---|
-| 1 | 2026-11-03 | America/Chicago | i-092c8a9baa58e3efb | 2026-11-03 18:12:21 | To be recorded | screenshots/lab1_run1.jpg | Not yet confirmed |
+| 1 | 2026-11-03 | America/Chicago | i-092c8a9baa58e3efb | 2026-11-03 18:12:21 | ec2-54-147-42-211.compute-1.amazonaws.com | screenshots/lab1_run1.jpg | Yes |
 | 2 | | | | | | screenshots/lab1_run2.jpg | |
 | 3 | | | | | | screenshots/lab1_run3.jpg | |
 | 4 | | | | | | screenshots/lab1_run4.jpg | |
