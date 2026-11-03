@@ -1,0 +1,104 @@
+AI-Enabled Study Lab 1.0
+
+Topic 1: Databases
+
+Read: AWS — What's the Difference Between Relational and Non-relational Databases?
+https://aws.amazon.com/compare/the-difference-between-relational-and-non-relational-databases/
+
+Video: IBM Technology — SQL vs. NoSQL — What's the difference?
+https://www.youtube.com/watch?v=Q5aTUc7c4jg
+
+AI used: ChatGPT
+
+Prompt(s) I asked the AI: What is a database? How do relational, key-value, document, and graph databases differ? How do SQL and NoSQL compare? What are the strengths and weaknesses of SQLite, SQL Server, MariaDB/MySQL, and PostgreSQL? Why does Balerica use SQLite?
+
+One thing the AI said that I double-checked, and what I found: The AI described relational databases as table-based and non-relational databases as supporting models such as documents and key-value records. The assigned AWS comparison explains this distinction and identifies different data models and application requirements as reasons to choose one approach over another.
+
+Paragraph:
+
+A database stores information in a form that an application can retrieve and update. Relational systems such as PostgreSQL, MySQL, MariaDB, and Microsoft SQL Server organize records into related tables and commonly use SQL. Non-relational databases include document, key-value, and graph systems, and the best choice depends on the structure of the data and the queries an application needs. On AWS, RDS and Aurora provide managed relational database options, while DynamoDB supports key-value and document workloads. PostgreSQL offers flexible queries, extensibility, and reliable transactions, although operating and tuning a database server requires more effort than using embedded SQLite. Balerica uses SQLite because it is simple to install and inspect during a lab; a production bank would generally need a broader architecture for concurrent workloads, resilience, security, auditing, and recovery.
+
+Numbers + sources: No external numerical statistics used.
+
+Topic 2: COBOL
+
+Read: Wikipedia — COBOL
+https://en.wikipedia.org/wiki/COBOL
+
+Video: Fireship — COBOL in 100 Seconds
+https://www.youtube.com/watch?v=7d7-etf-wNI
+
+AI used: ChatGPT
+
+Prompt(s) I asked the AI: Who developed COBOL? Why did banks and governments adopt it? How common is it today, and are programmer-age and transaction-volume statistics reliable? Why is replacement difficult? What does an implied decimal mean?
+
+One thing the AI said that I double-checked, and what I found: The AI linked COBOL's origin to the CODASYL committee in 1959. The assigned COBOL historical reference describes its committee-based development. Widely circulated claims about the average COBOL programmer's age or the share of banking transactions processed by COBOL do not establish a reliable single figure without a dated study, so I have not presented those figures as facts.
+
+Paragraph:
+
+COBOL is a business-oriented programming language developed through committee work beginning in 1959. It became closely associated with mainframes, banking, and government because these organizations needed dependable processing of large collections of business records. COBOL still matters wherever established applications contain important rules that are difficult to reproduce safely in replacement software. Modernizing these systems can require extensive analysis, data conversion, integration changes, and testing, which helps explain why complete replacement is risky and expensive. Published estimates of COBOL's current footprint and developer demographics differ, so those claims need careful sourcing rather than repetition. Balerica demonstrates fixed-width monetary storage: the digits 000000012550 represent $125.50 when the final two digits are understood to be cents, even though no decimal point is stored.
+
+Numbers + sources: 1959 — Wikipedia, COBOL (historical development); 000000012550 and $125.50 — SEIR Foundations Lesson 1 homework/runbook example (2026).
+
+Topic 3: SWIFT
+
+Read: Wikipedia — Society for Worldwide Interbank Financial Telecommunication
+https://en.wikipedia.org/wiki/SWIFT
+
+Video: a16z — Foreign Exchange 101 — What Happens When You Send Money Abroad?
+https://www.youtube.com/watch?v=eoXdyO9oGJc
+
+Additional source: Swift — ISO 20022 FAQs: Implementation
+https://www.swift.com/standards/iso-20022/iso-20022-faqs/implementation
+
+AI used: ChatGPT
+
+Prompt(s) I asked the AI: What is SWIFT and what does it transmit? What role do correspondent banks play? How do CIPS, SPFS, Ripple, and instant-payment systems compare? How do MT103 and MT202 relate to pacs.008 and pacs.009? What changed with ISO 20022?
+
+One thing the AI said that I double-checked, and what I found: The AI distinguished SWIFT's messaging function from actual settlement and explained that ISO 20022 introduces richer structured payment data. Swift's official implementation guidance identifies the end of the CBPR+ MT/ISO 20022 coexistence period for cross-border payment instructions as November 22, 2025. That transition applies to the specified payment-message scope; it does not mean every MT-format message in every Swift service ceased to exist.
+
+Paragraph:
+
+SWIFT is a financial messaging cooperative founded in 1973 that allows institutions to exchange standardized financial instructions. Its network carries messages rather than directly transferring money, so correspondent banks and settlement systems remain important to cross-border payments. Alternatives such as CIPS, SPFS, Ripple-related networks, and domestic instant-payment rails address some overlapping needs but do not simply replace the entire global SWIFT ecosystem. Legacy MT103 messages described customer credit transfers, while MT202 messages concerned transfers between financial institutions, including specialized cover-payment arrangements. ISO 20022 uses more structured data, with pacs.008 and pacs.009 supporting related customer and financial-institution payment flows. Swift's CBPR+ coexistence period ended on November 22, 2025, for the covered cross-border payment instructions, while other message categories and legacy interfaces may still use MT formats. Balerica's MT103 example is useful for understanding older payment messages, but moving the lab to pacs.008 would require different message fields, mappings, and validation.
+
+Numbers + sources: 1973 — Wikipedia, Society for Worldwide Interbank Financial Telecommunication (founding year); November 22, 2025 — Swift, ISO 20022 FAQs: Implementation (CBPR+ transition). MT103, MT202, pacs.008, and pacs.009 are message identifiers rather than quantitative statistics.
+
+Topic 4: APIs
+
+Read: MDN — An Overview of HTTP
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview
+
+Video: IBM Technology — What Is a REST API?
+https://www.youtube.com/watch?v=lsMQRaeKNDk
+
+AI used: ChatGPT
+
+Prompt(s) I asked the AI: What is an API? Who described REST? How do REST, SOAP, GraphQL, and gRPC differ? Why are APIs useful for Amazon Bedrock? What do GET, POST, JSON, TLS, authentication, and input validation do? Why does Balerica use POST for payments?
+
+One thing the AI said that I double-checked, and what I found: The AI explained that GET is intended for retrieving resources and POST for submitting information for processing. MDN's HTTP documentation supports the distinction between request methods. The Balerica homework explicitly identifies /payments as a POST operation, consistent with the possibility of changing payment records.
+
+Paragraph:
+
+An application programming interface defines how software systems exchange requests and results. REST is an architectural style described by Roy Fielding in 2000, while SOAP, GraphQL, and gRPC provide different approaches to service communication. HTTP GET normally requests information without intending to change server state, whereas POST submits information for processing and is appropriate for posting a payment. JSON represents structured values in a text format that is widely used by web APIs. APIs also make AI services practical because applications can call Amazon Bedrock remotely instead of hosting models themselves. Security depends on TLS, authentication, authorization, input validation, and defenses against problems described in the OWASP API Security Top 10. In Balerica, reading account information is a natural GET-style operation, while /payments needs POST because processing a payment may change stored data.
+
+Numbers + sources: 2000 — Roy Fielding, Architectural Styles and the Design of Network-based Software Architectures (REST dissertation); OWASP API Security Top 10 — OWASP (2023 edition). No API usage percentage asserted.
+
+Topic 5: Where COBOL, SWIFT, APIs, and Databases Meet
+
+Read: U.S. Government Accountability Office — Agencies Need to Plan for Modernizing Critical Decades-Old Legacy Systems (2025)
+https://files.gao.gov/reports/GAO-25-107795/index.html
+
+Video: Modernizing COBOL: From Mainframe to API
+https://www.youtube.com/watch?v=-CI8hb-077E
+
+AI used: ChatGPT
+
+Prompt(s) I asked the AI: How does a Balerica payment move from a SWIFT-style message to FastAPI, COBOL, fixed-width records, and SQLite? Why wrap legacy software with APIs? How do finance, healthcare, education, and government use integrations? What modernization risks does GAO describe? Where can AI help or fail?
+
+One thing the AI said that I double-checked, and what I found: The AI said legacy systems can remain operational while newer APIs expose their functions. The assigned GAO report discusses the need for deliberate modernization of critical aging government systems, including risks from outdated technology and weak modernization planning. Balerica's assignment describes a FastAPI interface with a COBOL core and SQLite; the precise order in which the lab updates files and the database depends on its implementation.
+
+Paragraph:
+
+Balerica shows how modern application interfaces can work alongside older banking software. A SWIFT-style payment request can enter a FastAPI service, which validates the request and calls COBOL business logic, while fixed-width records and SQLite support the lab's data handling. Wrapping a legacy system with an API can preserve important business rules while making the service accessible to newer applications, although it does not eliminate the need to modernize risky components. Financial institutions use interfaces around account and payment systems, healthcare organizations use HL7 FHIR interfaces for electronic health information, universities integrate student information and learning-management systems, and government agencies connect online services to older administrative systems. The GAO's 2025 report explains why aging critical systems require modernization plans and careful attention to operational risk. AI tools can help explain COBOL, document dependencies, and propose tests, but their output can miss unusual business rules, security requirements, and financial edge cases. Human review and comprehensive testing remain necessary before changes are trusted in a real banking environment.
+
+Numbers + sources: 2025 — U.S. Government Accountability Office, GAO-25-107795 (report year). No quantitative system-usage claims asserted.
