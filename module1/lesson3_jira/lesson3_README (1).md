@@ -51,16 +51,4 @@ My largest tasks were tied at 5 story points, including **SST-18 — [SEIR] Comp
 - `screenshots/jira_task.jpg` — Task with parent, description, and story point estimate
 - `screenshots/jira_backlog.jpg` — Backlog or list showing work items and estimates
 
-## Extra credit evidence table (Section 6)
 
-Extra credit was not included in this submission.
-
-| Item | Requirement | Due | Screenshot | Done? |
-|---|---|---|---|---|
-| BAM_5.1 | Finish Jira installation steps 4–5 | Nov 14, 2026 | `screenshots/BAM_5.1.jpg` | No |
-| BAM_5.2 | Verify Jira from EC2 | Nov 14, 2026 | `screenshots/BAM_5.2.jpg` | No |
-| BAM_5.3 | Integration dry run and test | Nov 14, 2026 | `screenshots/BAM_5.3.jpg` | No |
-| BAM_5.4 | Slack alert links to Jira | Nov 17, 2026 | `screenshots/BAM_5.4.jpg` | No |
-| BAM_5.5 | Jira issue exists | Nov 17, 2026 | `screenshots/BAM_5.5.jpg` | No |
-| BAM_5.6 | No duplicate tickets | Nov 17, 2026 | `screenshots/BAM_5.6.jpg` | No |
-| BAM_5.7 | Complete a one-day sprint | Nov 17, 2026 | `screenshots/BAM_5.7.jpg` | No |
