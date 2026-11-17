@@ -45,10 +45,10 @@ My largest tasks were tied at 5 story points, including **SST-18 — [SEIR] Comp
 
 ## Required screenshots (Section 4.5)
 
-- `screenshots/jira_estimation_on.jpg` — Estimation enabled in space settings
-- `screenshots/jira_epic.jpg` — Epic and child work items
-- `screenshots/jira_story.jpg` — Story with parent, description, and story point estimate
-- `screenshots/jira_task.jpg` — Task with parent, description, and story point estimate
-- `screenshots/jira_backlog.jpg` — Backlog or list showing work items and estimates
+- `screenshots/jira_estimation_on.png` — Estimation enabled in space settings
+- `screenshots/jira_epic.png` — Epic and child work items
+- `screenshots/jira_story.png` — Story with parent, description, and story point estimate
+- `screenshots/jira_task.png` — Task with parent, description, and story point estimate
+- `screenshots/jira_backlog.png` — Backlog or list showing work items and estimates
 
 
